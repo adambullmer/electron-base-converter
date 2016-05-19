@@ -1,0 +1,25 @@
+<form action="" class="form-horizontal">
+    <div class="col-xs-10">
+        <div class="row form-group">
+            <div class="col-xs-6">
+                {{input class="form-control" name="convertInput" type="text" placeholder="Input" value=input}}
+            </div>
+            <div class="col-xs-6">
+                {{base-alphabet placeholder="Decoding Alphabet" alphabet=inputAlphabet}}
+            </div>
+        </div>
+        <div class="row form-group">
+            <div class="col-xs-6">
+                {{input class="form-control" name="convertOutput" type="text" placeholder="Encoded String" readonly="" value=output}}
+            </div>
+            <div class="col-xs-6">
+                {{base-alphabet placeholder="Encoding Alphabet" alphabet=outputAlphabet}}
+            </div>
+        </div>
+    </div>
+
+    <div class="col-xs-2">
+        <button class="col-xs-12 btn btn-primary" {{action 'convert'}}>Convert</button>
+    </div>
+</form>
+

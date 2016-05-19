@@ -1,0 +1,12 @@
+machine:
+    node:
+        version: 4.0.0
+
+dependencies:
+    override:
+        - npm install
+        - bower install
+
+test:
+    override:
+        - npm test

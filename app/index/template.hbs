@@ -1,0 +1,14 @@
+<div class="jumbotron">
+    <h1>Base Converter</h1>
+    <div class="row">
+        {{base-converter input=input output=output inputAlphabet=inputAlphabet outputAlphabet=outputAlphabet}}
+
+        <form class="form-horizontal">
+            {{#each presets as |preset|}}
+            <div class="form-group col-xs-12">
+                {{base-alphabet readonly="" alphabet=preset.alphabet}}
+            </div>
+            {{/each}}
+        </form>
+    </div>
+</div>
