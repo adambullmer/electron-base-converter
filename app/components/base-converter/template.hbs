@@ -1,25 +1,31 @@
-<form action="" class="form-horizontal">
-    <div class="col-xs-10">
-        <div class="row form-group">
-            <div class="col-xs-6">
-                {{input class="form-control" name="convertInput" type="text" placeholder="Input" value=input}}
+<div class="card">
+    <div class="card-content">
+        <div class="row">
+            <div class="col s6">
+                <div class="row">
+                    <div class="input-field col s12">
+                        {{base-alphabet placeholder="Decoding Alphabet" alphabet=inputAlphabet}}
+                    </div>
+                    <div class="input-field col s12">
+                        {{input name="convertInput" type="text" value=input}}
+                        <label class="{{if input.length 'active' ''}}">Input</label>
+                    </div>
+                </div>
             </div>
-            <div class="col-xs-6">
-                {{base-alphabet placeholder="Decoding Alphabet" alphabet=inputAlphabet}}
-            </div>
-        </div>
-        <div class="row form-group">
-            <div class="col-xs-6">
-                {{input class="form-control" name="convertOutput" type="text" placeholder="Encoded String" readonly="" value=output}}
-            </div>
-            <div class="col-xs-6">
-                {{base-alphabet placeholder="Encoding Alphabet" alphabet=outputAlphabet}}
+            <div class="col s6">
+                <div class="row">
+                    <div class="input-field col s12">
+                        {{base-alphabet placeholder="Encoding Alphabet" alphabet=outputAlphabet}}
+                    </div>
+                    <div class="input-field col s12">
+                        {{input class="" name="convertOutput" type="text" placeholder="Encoded String" readonly="" value=output}}
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-
-    <div class="col-xs-2">
-        <button class="col-xs-12 btn btn-primary" {{action 'convert'}}>Convert</button>
+    <div class="card-action right-align">
+        <button class="btn-floating blue white-text"><i class="material-icons">swap_horiz</i></button>
+        <button class="btn-floating blue white-text" {{action 'convert'}}><i class="material-icons">shuffle</i></button>
     </div>
-</form>
-
+</div>

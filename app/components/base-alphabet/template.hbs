@@ -1,4 +1,14 @@
-<div class="input-group">
-    {{input class="form-control" type="text" readonly=readonly placeholder=placeholder value=alphabet}}
-    <span class="input-group-addon">{{base}}</span>
-</div>
+{{input class="col s12 truncate" type="text" readonly=readonly placeholder=placeholder value=alphabet}}
+<label class="active">{{base}}</label>
+{{#unless readonly}}
+    <div style="position: absolute; right: 0;">
+        <a class="dropdown-button btn-flat" data-activates="dropdown_{{elementId}}" data-beloworigin="true" data-alignment="right" style="padding: 0;">
+            <i class="large material-icons">more_vert</i>
+        </a>
+        <ul id="dropdown_{{elementId}}" class="dropdown-content" style="min-width: 100px;">
+            {{#each presets.data as |preset|}}
+                <li><a {{action 'usePreset' preset.alphabet}}>{{preset.label}}</a></li>
+            {{/each}}
+        </ul>
+    </div>
+{{/unless}}

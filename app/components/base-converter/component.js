@@ -7,7 +7,7 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
-    classNames: ['row'],
+    classNames: ['col', 's12'],
 
     converter: Ember.inject.service(),
 
@@ -23,6 +23,7 @@ export default Ember.Component.extend({
                 encodedString = converter.convert(this.get('input'), this.get('inputAlphabet'), this.get('outputAlphabet'));
 
             this.set('output', encodedString);
+            this.sendAction('convert');
         }
     }
 });
